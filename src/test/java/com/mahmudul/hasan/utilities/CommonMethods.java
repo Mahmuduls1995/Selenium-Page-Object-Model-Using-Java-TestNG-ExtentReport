@@ -1,5 +1,6 @@
 package com.mahmudul.hasan.utilities;
 
+import com.mahmudul.hasan.basedrivers.BaseDriver;
 import com.mahmudul.hasan.basedrivers.PageDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -11,11 +12,23 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CommonMethods {
+public class CommonMethods extends BaseDriver {
+    /*************************
+     * Wait Utilities *
+     *************************/
+    private final WebDriverWait wait = new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(30));
 
     /*************************
      * Page Utilities *
      *************************/
+    // create sleep method for 2000 milliseconds
+    public void sleep() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
     public String getCurrentPageUrl() {
         return PageDriver.getCurrentDriver().getCurrentUrl();
@@ -42,21 +55,18 @@ public class CommonMethods {
     /*************************
      * Input Utilities *
      *************************/
-
     public void enterText(WebElement element, String value) {
         element.clear();
         element.sendKeys(value);
     }
 
     public void enterTextUsingJs(WebElement element, String value) {
-        ((JavascriptExecutor) PageDriver.getCurrentDriver())
-                .executeScript("arguments[0].value=arguments[1];", element, value);
+        ((JavascriptExecutor) PageDriver.getCurrentDriver()).executeScript("arguments[0].value=arguments[1];", element, value);
     }
 
     /*************************
      * Action Utilities *
      *************************/
-
     public void hoverOverElement(WebElement element) {
         new Actions(PageDriver.getCurrentDriver()).moveToElement(element).perform();
     }
@@ -84,7 +94,6 @@ public class CommonMethods {
     /*************************
      * Dropdown Utilities *
      *************************/
-
     public void selectByValue(WebElement element, String value) {
         new Select(element).selectByValue(value);
     }
@@ -102,15 +111,8 @@ public class CommonMethods {
     }
 
     public boolean isOptionSelected(List<WebElement> elements, String value) {
-        return elements.stream()
-                .anyMatch(element -> element.getAttribute("value").equals(value) && element.isSelected());
+        return elements.stream().anyMatch(element -> element.getAttribute("value").equals(value) && element.isSelected());
     }
-
-    /*************************
-     * Wait Utilities *
-     *************************/
-
-    private WebDriverWait wait = new WebDriverWait(PageDriver.getCurrentDriver(), Duration.ofSeconds(30));
 
     public void waitForSeconds(int milliseconds) {
         try {
@@ -139,7 +141,6 @@ public class CommonMethods {
     /*************************
      * Window Utilities *
      *************************/
-
     public List<String> getAllWindowHandles() {
         return new ArrayList<>(PageDriver.getCurrentDriver().getWindowHandles());
     }
@@ -161,7 +162,6 @@ public class CommonMethods {
     /*************************
      * Validation Utilities *
      *************************/
-
     public boolean isElementDisplayed(WebElement element) {
         try {
             return element.isDisplayed();
@@ -185,7 +185,6 @@ public class CommonMethods {
     /*************************
      * JavaScript Execution Utilities *
      *************************/
-
     public Object executeJs(String script, Object... args) {
         return ((JavascriptExecutor) PageDriver.getCurrentDriver()).executeScript(script, args);
     }
@@ -193,7 +192,6 @@ public class CommonMethods {
     /*************************
      * Highlight Element *
      *************************/
-
     public void highlightElement(WebElement element) {
         JavascriptExecutor js = (JavascriptExecutor) PageDriver.getCurrentDriver();
         js.executeScript("arguments[0].style.border='3px solid red'", element);

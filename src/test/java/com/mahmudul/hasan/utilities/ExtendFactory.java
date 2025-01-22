@@ -4,7 +4,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtendFactory {
-
     // Define a public static final ExtentReports variable named extentReports to hold the ExtentReports instance
     public static final ExtentReports extentReports = new ExtentReports();
 
@@ -14,7 +13,7 @@ public class ExtendFactory {
         ExtentSparkReporter reporter = new ExtentSparkReporter("./reports/Report.html");
 
         // Configure the reporter with a report name
-        reporter.config().setReportName("Automation - Batch24");
+        reporter.config().setReportName("Automation - Batch29");
 
         // Attach the reporter to the extentReports instance
         extentReports.attachReporter(reporter);

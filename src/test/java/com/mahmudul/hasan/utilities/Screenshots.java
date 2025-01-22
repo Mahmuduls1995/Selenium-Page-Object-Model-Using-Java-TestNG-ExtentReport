@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenShots {
+public class Screenshots {
     // Define a public static method named capture that takes a WebDriver instance and a screenshot name as parameters
     // This method returns the path of the captured screenshot as a String and throws IOException
     public static String capture(WebDriver driver, String screenShotName) throws IOException {
@@ -30,7 +30,6 @@ public class ScreenShots {
         // Return the destination path of the screenshot
         return dest;
     }
-
 
 
 }
