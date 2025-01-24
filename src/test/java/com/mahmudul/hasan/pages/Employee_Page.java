@@ -65,9 +65,9 @@ public class Employee_Page {
         add.click();
         Thread.sleep(5000);
         passCase("Clicked on Add option");
-        first_name.sendKeys("John");
+        first_name.sendKeys("Ebrahim");
         Thread.sleep(3000);
-        middle_name.sendKeys("Smith");
+        middle_name.sendKeys("Khalil");
         Thread.sleep(3000);
         last_name.sendKeys("Doe");
         Thread.sleep(3000);
