@@ -12,6 +12,11 @@ This repository contains a Selenium-based automation framework developed to cond
 - [Contributing](#contributing)
 - [License](#license)
 
+## Video of Test Automation
+- Video of automated category selection sign-up from the registration page and Add Employee. through Selenium and TestNG.
+
+https://github.com/user-attachments/assets/dcc9c03d-058b-4768-bdb7-6b0a773994a8
+
 ## Introduction
 
 This project aims to automate various user interface tests on the OrangeHRM website to ensure its functionality and reliability. The framework is designed to be easily extensible and maintainable, allowing for the addition of new tests with minimal effort.
