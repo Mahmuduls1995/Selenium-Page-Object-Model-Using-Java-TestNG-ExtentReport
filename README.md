@@ -70,6 +70,11 @@ The project uses Extent Reports to generate detailed and visually appealing test
 2. Open the Report.html file in a web browser to view the test results.
 
 The report includes detailed information about each test, including the steps executed, the status (pass/fail), and any screenshots captured during the test execution.
+## Login Test Report
+![Test-Report](https://github.com/Mahmuduls1995/Selenium-Page-Object-Model-Using-Java-TestNG-ExtentReport/blob/main/Report_pass_sc/Login_Screenshot_1.png)
+
+## Add Employee Test Report
+![Test-Report](https://github.com/Mahmuduls1995/Selenium-Page-Object-Model-Using-Java-TestNG-ExtentReport/blob/main/Report_pass_sc/Add-Employee_1.png)
 
 ## Contributing
 
